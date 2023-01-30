@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-The game is introduced via the [Video Demo](https://youtube.com).
+The game is introduced via the [Video Demo](https://youtu.be/pi4HSVjnIeY)
 
 ## User Manual
 1.	The game is played by launching the console app main.
