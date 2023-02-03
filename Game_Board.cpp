@@ -92,6 +92,6 @@ private:
         }  
         cout<<endl<<endl;
         cout<<"Alien life: "<<alien_life<<"   "<<"Alien attack: "<<alien_attack<<endl;
-        cout<<"Zombie life: "<<zombie_life<<"   "<<"Zombie attack: "<<zombie_attack<<"Range: "<<zombie_range<<endl;
+        cout<<"Zombie life: "<<zombie_life<<"   "<<"Zombie attack: "<<zombie_attack<<" "<<"Range: "<<zombie_range<<endl;
         cout<<endl;
   }
