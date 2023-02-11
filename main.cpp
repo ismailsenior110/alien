@@ -1,7 +1,7 @@
 // ********************************************************* 
 // Course: TCP1101 PROGRAMMING FUNDAMENTALS 
 // Year: Trimester 1, 2022/23 (T2215) 
-// Lab: Lab12
+// Lab: TT8L
 // Names: MUHAMMAD ISMAIL HAMZA 
 // IDs: 1201303165
 // Emails: 1201303165@student.mmu.edu.my
