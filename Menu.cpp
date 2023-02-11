@@ -1,6 +1,5 @@
 #include "Game_Board.cpp"
-#include"Game_Commands.cpp"
-#include "helper/helper.cpp"
+#include "helper/helper_menu.cpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,36 +14,40 @@ char choice; // user choice
 int num_rows, num_columns,num_zombies; // Required parameters of the game
 public:
 void welcome_msg();
-void set_row_column_zombies(int _row, int _column, int _zombies);
+//void set_row_column_zombies(int _row, int _column, int _zombies);
 void display();
 bool is_odd_number(int num);
 };
+
 void Menu:: welcome_msg()
 {
- cout<<"Welcome alien Path Game"<<endl;
+ cout<<"Welcome Alien Path Game"<<endl;
  cout<<"------------------------------"<<endl;
  cout<<endl;
- cout<<"Do you want to continue with defaut game setting (y/n)"<<endl;
-display();
+ cout<<"Do you want to continue with the  defaut game setting (y/n)"<<endl;
+ display();
 }
 void Menu::display()
 {
-// object of game command to get user command 
- Game_Commands game_command;
- // object of helper class to pause game and clear screen
- Helper helper;
- cin>>choice;
+  // object of game command to get user command 
+  Game_Commands game_command;
+  Menu menu;
+  // object of helper class to pause game and clear screen
+  Helper_Menu helper;
+  cin>>choice;
   helper.Pause();
   helper.ClearScreen();
  if(choice == 'y'){
+ 	
  	// generate random number of rows and column for game board
  	// both the row and column must be odd number respectively;
  	do{
  		num_rows =  1 + (rand() % 10);
 		num_columns = 1 + (rand() % 10);
-		num_zombies = 1 + (rand() % 3);
+		num_zombies = 1 + (rand() % 9);
 	 }
 	 while(is_odd_number(num_rows) == 0 || is_odd_number(num_columns) == 0);
+	 
 	cout<<"Default Game Setting"<<endl;
     cout<<"------------------------------"<<endl;
     cout<<"Number of columns: "<<num_rows<<endl;
@@ -59,7 +62,7 @@ void Menu::display()
     game_board.init(num_rows,num_columns,num_zombies);
     game_board.show_game_board();
     string command = game_command.set_command();
-	game_command.game_commands(command);
+   	game_command.game_commands(command);
  }
  else if(choice == 'n'){
  	cout<<endl;
@@ -116,21 +119,14 @@ void Menu::display()
  	srand(1); //fixed map 
     srand(time(NULL)); //random map
  	Game_Board game_board;
-    game_board.init(5,7,1);
+    game_board.init(num_rows,num_columns,num_zombies);
     game_board.show_game_board();
     string command = game_command.set_command();
 	game_command.game_commands(command);
  }
 }
-void Menu:: set_row_column_zombies(int _rows,int _columns,int _zombies)
-{
-num_rows = _rows;
-num_columns = _columns;
-num_zombies = _zombies;
-}
+
 bool Menu:: is_odd_number(int num){
 	// function check row and column as odd numbers 
 	return num % 2 != 0;	
 }
-
-
