@@ -4,12 +4,12 @@ using namespace std;
 
 
 
-class Helper_Menu{
+class Helper{
 public:
 	int ClearScreen();
 	int Pause();
 };
-int Helper_Menu :: ClearScreen()
+int Helper :: ClearScreen()
     {
         #if defined(_WIN32)
             return std::system("cls");
@@ -17,7 +17,7 @@ int Helper_Menu :: ClearScreen()
             return std::system("clear");
         #endif
     }
- int Helper_Menu :: Pause()
+ int Helper :: Pause()
     {
         #if defined(_WIN32)
             return std::system("pause");
